@@ -3,10 +3,10 @@ body {
 }
 #profile, #post {
     display: none;
-    padding-bottom:70px
+    padding-bottom:10vh;
 }
 .coverHeight {
-    max-height: 300px;
+    max-height: 50vh;
     overflow: hidden;
     background-position: center;
     background-repeat: no-repeat;
@@ -77,7 +77,7 @@ body {
         display: flex;
         flex-direction: column;
     }
-    .heading, .content {
+    .heading, .content, #home2 {
         max-width: 100%;
     }
     #profile {

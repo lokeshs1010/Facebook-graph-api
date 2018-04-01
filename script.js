@@ -60,11 +60,7 @@ let getDetails = () => {
 
       $("#myName").text(response.name);
       $("#profileId").html(
-        '<a target="blank" href="https://facebook.com/' +
-          response.id +
-          '">https://facebook.com/' +
-          response.id +
-          "</a>"
+        '<a target="blank" class="btn btn-primary" href="https://facebook.com/' + response.id + '">Goto Profile</a>'
       );
       jQuery.each(response.education, function(i, val) {
         $("#educationList").append("<li>" + val.school.name + "</li>");
@@ -86,9 +82,17 @@ let getDetails = () => {
       $.each(response.posts.data, function(i, post) {
         var j = i + 1;
         if (post.message) {
-          $("#posts").append('<div class="card"><div class="card-body"><h4 class="card-title">Post ' + j + '</h4><h6 class="card-subtitle mb-2 text-muted">Created Time : ' + post.created_time + '</h6><p class="card-text">Message : ' + post.message + '</p><a href="#" class="card-link">Post ID : ' + post.id + "</a></div></div>");
+          $("#posts").append('<div class="card"><div class="card-body"><h4 class="card-title">Post '
+                       + j + '</h4><h6 class="card-subtitle mb-2 text-muted">Created Time : '
+                       + post.created_time + '</h6><p class="card-text"><b>Message<b> : '
+                       +post.message + '</p><b>Post id</b> : ' + post.id + '<br><a href="https://facebook.com/'
+                        +post.id + '" class="card-link btn btn-primary">Goto Post </a></div></div>');
         } else {
-          $("#posts").append('<div class="card" ><div class="card-body"><h4 class="card-title">Post ' + j + '</h4><h6 class="card-subtitle mb-2 text-muted">Created Time : ' + post.created_time + '</h6><p class="card-text">Story : ' + post.story + '</p><a href="#" class="card-link">Post ID : ' + post.id + "</a></div></div>");
+          $("#posts").append('<div class="card" ><div class="card-body"><h4 class="card-title">Post '
+                       + j + '</h4><h6 class="card-subtitle mb-2 text-muted">Created Time : '
+                       + post.created_time + '</h6><p class="card-text"><b>Story</b> : '
+                       +post.story + '</p><b>Post id</b> : '+ post.id +'<br><a href="https://facebook.com/'
+                        + post.id + '" class="card-link btn btn-primary">Goto Post </a></div></div>');
         }
       });
     },
