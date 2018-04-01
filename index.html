@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Jquery Ajax</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="navbar bg-dark">
+        <div class="container navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <img src="./facebook.jpg" alt="logo" style="width:100px;">
+                </a>
+            </div>
+            <input type="text" class="search" name="fbtoken" placeholder="Paste your token here">
+            <button id="searchButton">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Nav pills -->
+    <ul class="nav nav-pills nav-justified sticky-top bg-dark" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#home">PROFILE</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#home2">POSTS</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content foot">
+        <div id="home" class="container-fluid tab-pane active">
+            <br>
+            <div id="profile" class="container-fluid bg-light">
+                <div class="row">
+                    <div id="cover" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 coverHeight">
+                        <div class="row">
+                            <div id="profilePhoto" class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2 " style="margin:3em 0 1em 0;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <h2>About</h2>
+                    </div>
+                </div>
+                <hr>
+                <div class="row tab mt-4">
+                    <div class="col-3 heading">
+                        <!-- Nav pills -->
+                        <ul class="nav nav-pills nav-head" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#name">Name</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#menu1">Education</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#menu2">Basic Info</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#menu3">Relationship</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#menu4">Details about you</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-9 content">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div id="name" class="container tab-pane active">
+                                <h3>NAME</h3>
+                                <hr>
+                                <p>Your Name is
+                                    <b>"
+                                        <span id="myName"></span>"</b>
+                                </p>
+                                <br>
+                                <h3>Profile ID</h3>
+                                <hr>
+                                <p>Your profile link is
+                                    <b>"
+                                        <span id="profileId"></span>"</b>
+                                </p>
+                                <hr>
+                            </div>
+                            <div id="menu1" class="container tab-pane fade">
+                                <h3>Education</h3>
+                                <hr>
+                                <p>You are Educated from :
+                                    <b>
+                                        <span id="myEducation"></span>
+                                    </b>
+                                </p>
+                                <ol id="educationList"></ol>
+                                <hr>
+                            </div>
+                            <div id="menu2" class="container tab-pane fade">
+                                <h3>CONTACT INFORMATION</h3>
+                                <hr>
+                                <p>Your Email is:
+                                    <b> "
+                                        <span id="email"></span>"</b>
+                                </p>
+                                <br>
+
+                                <h3>BASIC INFORMATION</h3>
+                                <hr>
+                                <p>Your Date of birth is:
+                                    <b> "
+                                        <span id="dob"></span>"</b>
+                                </p>
+                                <hr>
+                                <p>Your Gender is:
+                                    <b> "
+                                        <span id="gender"></span>"</b>
+                                </p>
+                                <hr>
+                            </div>
+                            <div id="menu3" class="container tab-pane fade">
+                                <h3>RELATIONSHIP</h3>
+                                <hr>
+                                <p>*Your Relationship Status is :
+                                    <b>"
+                                        <span id="myStatus"></span> "</b>
+                                </p>
+                                <hr>
+                            </div>
+                            <div id="menu4" class="container tab-pane fade">
+                                <h3>FAVOURITE QUOTES</h3>
+                                <hr>
+                                <p>
+                                    <small>
+                                        <b>"
+                                            <span id="quotes"></span>"</b>
+                                    </small>
+                                </p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="home2" class="container-fluid tab-pane fade">
+            <br>
+            <div id="post" class="container-fluid mt-4 bg-light">
+                <div class="row">
+                    <div class="col-12" id="posts">
+                            <h3>Recent Posts :</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
